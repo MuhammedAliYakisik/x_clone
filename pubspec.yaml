@@ -49,6 +49,10 @@ flutter:
   - assets/icons/twitter-retweet.svg
   - assets/icons/twitter-search.svg
   - assets/icons/twitter-verified.svg
+  - assets/icons/twitter-lists.svg
+  - assets/icons/twitter-profile.svg
+  - assets/icons/twitter-settings.svg
+  - assets/icons/twitter-newtweet.svg
 
 
   # example:

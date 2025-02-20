@@ -4,17 +4,9 @@ import 'package:flutter/material.dart';
 import '../../core/constants/color_constant.dart';
 import '../../core/constants/string_constant.dart';
 
-class CustomTabbar extends StatefulWidget implements PreferredSizeWidget {
+class CustomTabbar extends StatelessWidget implements PreferredSizeWidget {
   const CustomTabbar({super.key});
 
-  @override
-  State<CustomTabbar> createState() => _CustomTabbarState();
-
-  @override
-  Size get preferredSize => const Size.fromHeight(50);
-}
-
-class _CustomTabbarState extends State<CustomTabbar> {
   @override
   Widget build(BuildContext context) {
     return TabBar(
@@ -33,4 +25,6 @@ class _CustomTabbarState extends State<CustomTabbar> {
     );
   }
 
+  @override
+  Size get preferredSize => const Size.fromHeight(50);
 }
