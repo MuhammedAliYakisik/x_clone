@@ -42,7 +42,7 @@ class TweetItems {
       tweetImage: "https://quotefancy.com/media/wallpaper/3840x2160/353377-Baltasar-Graci-n-Quote-The-path-to-greatness-is-along-with-others.jpg",
       time: "5h",
       image:
-      "https://www.shutterstock.com/image-photo/headshot-portrait-smiling-african-american-600nw-1667439898.jpg",
+      "https://wallpapers.com/downloads/high/best-profile-pictures-sct2ol2vn6zfnet4.webp",
     ),
     Tweet(
       name: "Jonathan Ive",
@@ -113,6 +113,11 @@ class TweetItems {
       image:
       "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg",
     ),
+  ];
+  
+  final List<Tweet> tweetsForFollow = [
+    Tweet(name: "Nature", userName: "nature_21", image: "https://wallpapers.com/downloads/high/best-profile-pictures-sct2ol2vn6zfnet4.webp", tweet: "Awesome", comments: 21, shares: 13, likes: 321, views: 500, time: "10h", tweetImage: "https://fastly.picsum.photos/id/496/200/200.jpg?hmac=Asy6Q8R1Y6wu0nrV_ymC5JGqktniSVnGqoYvNcHdzBI"),
+    Tweet(name: "Cute Bird", userName: "bird_c", image: "https://wallpapers.com/images/high/shiny-starly-looking-annoyed-r2df134u7mas3unx.webp", tweet: "Hi", comments: 1, shares: 0, likes: 12, views: 150, time: "1m", tweetImage: "https://wallpapers.com/images/high/shiny-starly-looking-annoyed-r2df134u7mas3unx.webp")
   ];
 
 

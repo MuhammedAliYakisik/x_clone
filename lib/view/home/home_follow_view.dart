@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:x_clone/view/home/Tweet/tweet_model.dart';
+import 'package:x_clone/view/widgets/tweet_card.dart';
 
 import '../../core/constants/color_constant.dart';
 
 class HomeFollowView extends StatefulWidget {
-  const HomeFollowView({super.key});
+  final Tweet tweet;
+  const HomeFollowView({super.key,required this.tweet});
 
   @override
   State<HomeFollowView> createState() => _HomeFollowViewState();
@@ -12,15 +15,6 @@ class HomeFollowView extends StatefulWidget {
 class _HomeFollowViewState extends State<HomeFollowView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorConstant.instance.primaryColor,
-      body: Center(
-        child: Column(
-          children: [
-            Text("takip")
-          ],
-        ),
-      ),
-    );
+    return TweetCard(tweet: widget.tweet);
   }
 }

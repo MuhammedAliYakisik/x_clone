@@ -14,6 +14,9 @@ class AssetConstant {
   final twitterRetweet = "assets/icons/twitter-retweet.svg";
   final twitterSearch = "assets/icons/twitter-search.svg";
   final twitterVerified = "assets/icons/twitter-verified.svg";
+  final twitterProfile = "assets/icons/twitter-profile.svg";
+  final twitterSettings = "assets/icons/twitter-settings.svg";
+  final twitterLists = "assets/icons/twitter-lists.svg";
   //home_view
   final profilePicture = "assets/photos/x_picture.jpg";
 
