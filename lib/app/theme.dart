@@ -24,5 +24,6 @@ final theme = ThemeData.light().copyWith(
   textTheme: GoogleFonts.robotoTextTheme(
     ThemeData.light().textTheme,
   ),
+  scaffoldBackgroundColor: ColorConstant.instance.primaryColor
 
 );
