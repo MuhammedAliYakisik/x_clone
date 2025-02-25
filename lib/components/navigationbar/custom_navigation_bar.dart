@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:x_clone/core/constants/asset_constant.dart';
 import 'package:x_clone/core/constants/color_constant.dart';
 import 'package:x_clone/view/home/home_view.dart';
+import 'package:x_clone/view/message/message_view.dart';
+import 'package:x_clone/view/notifications/notifications_view.dart';
+import 'package:x_clone/view/search/search_view.dart';
 
 class CustomNavigationBar extends StatefulWidget {
   const CustomNavigationBar({super.key});
@@ -14,18 +18,18 @@ class CustomNavigationBar extends StatefulWidget {
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
   int selectedIndex = 0;
   late final List<Widget> page;
+
   @override
   void initState() {
     page = [
       const HomeView(),
-      Text("data"),
-      navBarPage(Icons.notifications),
-      navBarPage(Icons.grid_view),
-      navBarPage(Icons.mail),
+      const SearchView(),
+      const NotificationsView(),
+      const MessageView()
     ];
-
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,42 +47,45 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icons/twitter-home.svg",
+              AssetConstant.instance.twitterHome,
               height: 25,
               width: 25,
-              color: Colors.black,
+              color: selectedIndex == 0
+                  ? Colors.black
+                  : ColorConstant.instance.tertiaryColor,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icons/twitter-search.svg",
+              AssetConstant.instance.twitterSearch,
               height: 25,
               width: 25,
+              color: selectedIndex == 1
+                  ? Colors.black
+                  : ColorConstant.instance.tertiaryColor,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icons/twitter-alert-6.svg",
+              AssetConstant.instance.twitterAlert,
               height: 25,
               width: 25,
+              color: selectedIndex == 2
+                  ? Colors.black
+                  : ColorConstant.instance.tertiaryColor,
             ),
             label: "",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              "assets/icons/twitter-news.svg",
+              AssetConstant.instance.twitterMessage,
               height: 25,
               width: 25,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              "assets/icons/twitter-message.svg",
-              height: 25,
-              width: 25,
+              color: selectedIndex == 3
+                  ? Colors.black
+                  : ColorConstant.instance.tertiaryColor,
             ),
             label: "",
           ),
@@ -87,13 +94,4 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       body: page[selectedIndex],
     );
   }
-}
-navBarPage(iconName) {
-  return Center(
-    child: Icon(
-      iconName,
-      size: 150,
-      color: Colors.white,
-    ),
-  );
 }

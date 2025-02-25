@@ -12,7 +12,7 @@ final theme = ThemeData.light().copyWith(
           color: ColorConstant.instance.primaryColor
       ),
   ),
-  tabBarTheme: TabBarTheme(labelColor: Colors.black),
+  tabBarTheme: TabBarTheme(labelColor: ColorConstant.instance.tertiaryColor),
   colorScheme: ColorScheme.fromSeed(seedColor: ColorConstant.instance.secondaryColor),
   useMaterial3: true,
   drawerTheme: DrawerThemeData(

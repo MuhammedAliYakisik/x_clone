@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/constants/color_constant.dart';
-import '../../core/constants/string_constant.dart';
 
 class CustomTabbar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomTabbar({super.key});
+  final List<Tab> tabs;
+  const CustomTabbar({super.key, required this.tabs});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,11 @@ class CustomTabbar extends StatelessWidget implements PreferredSizeWidget {
         fontWeight: FontWeight.bold,
       ),
       labelColor: ColorConstant.instance.tertiaryColor,
-      tabs: [
-        Tab(text: StringConstant.instance.tabBarFirstText),
-        Tab(text: StringConstant.instance.tabBarSecondText),
-      ],
+      tabs: tabs,
     );
   }
 
   @override
   Size get preferredSize => const Size.fromHeight(50);
+
 }

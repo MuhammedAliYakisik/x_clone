@@ -21,6 +21,7 @@ class _HomePrivateViewState extends State<HomePrivateView> {
       backgroundColor: ColorConstant.instance.primaryColor,
       body: ListView.separated(
         itemCount: tweetList.tweets.length,
+        shrinkWrap: true,
         itemBuilder: (context, indeks) {
           var tweet = tweetList.tweets[indeks];
           return TweetCard(tweet: tweet);

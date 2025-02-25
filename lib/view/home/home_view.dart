@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:x_clone/components/drawer/custom_drawer.dart';
-import 'package:x_clone/components/navigationbar/custom_navigation_bar.dart';
+import 'package:x_clone/components/floatingactionbutton/custom_floating_action_button.dart';
 import 'package:x_clone/components/tabBar/custom_tabbar.dart';
 import 'package:x_clone/core/constants/asset_constant.dart';
 import 'package:x_clone/core/constants/color_constant.dart';
+import 'package:x_clone/core/constants/string_constant.dart';
 import 'package:x_clone/view/home/Tweet/tweet_items.dart';
 import 'package:x_clone/view/home/home_follow_view.dart';
 import 'package:x_clone/view/home/home_private_view.dart';
@@ -54,7 +55,7 @@ class _HomeViewState extends State<HomeView> {
       length: 2,
       child: Scaffold(
         drawer: CustomDrawer(),
-        floatingActionButton: _floatActionButton(),
+        floatingActionButton: CustomFloatingActionButton(icon: Icons.add),
         backgroundColor: ColorConstant.instance.primaryColor,
         body: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
@@ -72,13 +73,6 @@ class _HomeViewState extends State<HomeView> {
       ),
     );
   }
-
-  FloatingActionButton _floatActionButton() {
-    return FloatingActionButton(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),onPressed: (){},
-      child: SvgPicture.asset("assets/icons/twitter-newtweet.svg", color: ColorConstant.instance.primaryColor, width: 10, height: 25,),
-    );
-  }
-
   Widget _appBar() {
     return SliverAppBar(
       title: const FaIcon(
@@ -106,7 +100,10 @@ class _HomeViewState extends State<HomeView> {
           },
         ),
       ),
-      bottom: CustomTabbar(),
+      bottom: CustomTabbar(tabs: [
+        Tab(text: StringConstant.instance.tabBarFirstText,),
+        Tab(text: StringConstant.instance.tabBarSecondText,),
+      ])
     );
   }
 }
